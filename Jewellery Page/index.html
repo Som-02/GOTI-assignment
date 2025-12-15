@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KILANGI - Jewellery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<style>
+
+html{
+    scroll-behavior: smooth;
+}    
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2b2b2b;
+}
+
+.top-strip {
+  position: relative;
+  background: #0f3b36;
+  color: #fff;
+  padding: 8px 40px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.strip-text {
+  display: inline-block;
+}
+
+.socials {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.socials a {
+  color: #fff;
+  margin-left: 14px;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.socials a:hover {
+  opacity: 0.7;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #fffaf6;
+}
+
+.search-box input {
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 220px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.icons span {
+  margin-left: 18px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #e8d4c2;
+  padding: 14px 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 14px;
+}
+
+.hero {
+  display: flex;
+  height: 520px;
+}
+
+.hero-left {
+  width: 50%;
+  background: url("images/hero-left.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  padding: 50px;
+  margin-left: 60px;
+  max-width: 420px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero-content span {
+  font-style: italic;
+}
+
+.hero-content p {
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.cta {
+  padding: 12px 22px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero-right {
+  width: 50%;
+  background: url("images/hero-right.jpeg") center/cover no-repeat;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 18px 0;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+}
+
+.bestseller-section {
+  background: #fffaf6;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.bestseller-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.bestseller-section h2 span {
+  font-style: italic;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 50px;
+}
+
+.categories button {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #9aa8a4;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.categories .active {
+  background: #1f4b46;
+  color: #fff;
+  border-color: #1f4b46;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 10px 20px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.product-card h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price span {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.colors {
+  margin-top: 12px;
+}
+
+.colors span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  border: 1px solid #aaa;
+}
+
+.gold {
+  background: #e6c98f;
+}
+
+.silver {
+  background: #cfcfcf;
+}
+
+.shop-btn {
+  background: #1f4b46;
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.recently-viewed {
+  background: #eddccf;
+  padding: 50px 60px;
+}
+
+.recently-viewed h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.recent-card {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.recent-card img {
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 12px;
+}
+
+.recent-card p {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.recent-card .price {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.recent-card del {
+  color: #888;
+  margin-left: 4px;
+}
+
+.gift-section {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.gift-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gift-section em {
+  font-style: italic;
+}
+
+.gift-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.gift-left img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.gift-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.gift-card {
+  position: relative;
+}
+
+.gift-card img {
+  width: 100%;
+  display: block;
+}
+
+.gift-card button {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  border: 1px solid #1f4b46;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.future-section {
+  background: #f2dfd2;
+  padding: 80px 60px;
+}
+
+.future-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.future-image img {
+  width: 100%;
+  max-width: 520px;
+}
+
+.future-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.future-content h2 em {
+  font-style: italic;
+}
+
+.future-content p {
+  font-size: 15px;
+  max-width: 480px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.future-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+}
+
+.feature {
+  text-align: center;
+  font-size: 13px;
+}
+
+.feature img {
+  width: 42px;
+  margin-bottom: 10px;
+}
+.feature span {
+  display: block;
+}
+
+.reviews-section {
+  background: #fffaf6;
+  padding: 90px 60px;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.reviews-section em {
+  font-style: italic;
+}
+
+.reviews-subtitle {
+  font-size: 15px;
+  max-width: 680px;
+  margin: 0 auto 60px;
+  color: #444;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 50px;
+}
+
+.review-card {
+  text-align: left;
+}
+
+.review-card img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.stars {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.review-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.review-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.reviews-btn {
+  background: #1f4b46;
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+footer{
+    background-color:#0f3b36;
+    color:#fff;
+    padding:60px 8%
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+    font-size:14px
+}
+
+footer h4{
+    margin-bottom:12px
+}
+footer a{
+    display:block;
+    margin:6px 0;
+    color:#e5e5e5
+}
+.copyright{
+    text-align:center;
+    margin-top:30px;
+    font-size:13px
+}
+</style>
+<body>
+<div class="top-strip">
+  <span class="strip-text">
+    Step into Sparkle – Pure Gold & Silver Await
+  </span>
+
+  <span class="socials">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+  </span>
+</div>
+
+<header class="header">
+  <div class="search-box">
+    <input type="text" placeholder="Search for Earrings..." />
+  </div>
+
+  <div class="logo">KILANGI</div>
+
+  <div class="icons">
+    <span>♡</span>
+    <span>👤</span>
+    <span>🛍</span>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#">All Jewellery</a>
+  <a href="#">Gold</a>
+  <a href="#">Silver</a>
+  <a href="#">Gifting</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-content">
+      <h1>Because You Deserve to<br><span>Feel Timeless.</span></h1>
+      <p>
+        Each piece is thoughtfully designed to celebrate your individuality –
+        blending modern elegance with lasting craftsmanship.
+      </p>
+      <a href="#bestseller" class="cta">
+        Explore the Elegance →
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right"></div>
+</section>
+
+<section class="features">
+  <div>✧ Anti-Fade Polish</div>
+  <div>✧ Timeless Design</div>
+  <div>✧ Lightweight Comfort</div>
+  <div>✧ Modern Minimal</div>
+</section>
+
+<section id="bestseller" class="bestseller-section">
+  <h2>
+    Explore Our <span>Timeless Bestseller</span>
+  </h2>
+
+  <div class="categories">
+    <button class="active">Rings</button>
+    <button>Earrings</button>
+    <button>Pendants</button>
+    <button>Bracelets</button>
+    <button>Bangles</button>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/ring1.jpeg" alt="Ring">
+      <h4>TWISTED PETAL GOLD BRACELET</h4>
+      <p class="price">
+        ₹79904 <span>₹99904</span>
+      </p>
+      <div class="colors">
+        <span class="gold"></span>
+        <span class="silver"></span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/ring2.jpeg" alt="Ring">
+      <h4>TWISTED PETAL GOLD BRACELET</h4>
+      <p class="price">
+        ₹79904 <span>₹99904</span>
+      </p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/ring3.jpeg" alt="Ring">
+      <h4>TWISTED PETAL GOLD BRACELET</h4>
+      <p class="price">
+        ₹79904 <span>₹99904</span>
+      </p>
+      <div class="colors">
+        <span class="gold"></span>
+        <span class="silver"></span>
+      </div>
+    </div>
+  </div>
+
+  <button class="shop-btn">
+    Shop Bestsellers →
+  </button>
+</section>
+
+<section class="recently-viewed">
+  <h3>Recently Viewed</h3>
+  <div class="recent-grid">
+    <div class="recent-card">
+      <img src="images/ring1.jpeg" alt="">
+      <p>TWISTED PETAL GOLD BRACELET</p>
+      <span class="price">₹79904 <del>₹99904</del></span>
+    </div>
+
+    <div class="recent-card">
+      <img src="images/ring2.jpeg" alt="">
+      <p>TWISTED PETAL GOLD BRACELET</p>
+      <span class="price">₹79904</span>
+    </div>
+
+    <div class="recent-card">
+      <img src="images/ring3.jpeg" alt="">
+      <p>TWISTED PETAL GOLD BRACELET</p>
+      <span class="price">₹79904 <del>₹99904</del></span>
+    </div>
+
+    <div class="recent-card">
+      <img src="images/ring1.jpeg" alt="">
+      <p>TWISTED PETAL GOLD BRACELET</p>
+      <span class="price">₹79904</span>
+    </div>
+  </div>
+</section>
+
+<section class="gift-section">
+  <h2>
+    Make It <em>Extra Special</em> with Personalised<br>Gift Notes
+  </h2>
+
+  <div class="gift-layout">
+    <div class="gift-left">
+      <img src="images/gift-main.jpeg" alt="">
+    </div>
+
+    <div class="gift-right">
+      <div class="gift-card">
+        <img src="images/hero-right.jpeg" alt="">
+        <button>Shop Under ₹10000</button>
+      </div>
+
+      <div class="gift-card">
+        <img src="images/hero-right.jpeg" alt="">
+        <button>Shop Under ₹20000</button>
+      </div>
+
+      <div class="gift-card">
+        <img src="images/hero-right.jpeg" alt="">
+        <button>Shop Under ₹30000</button>
+      </div>
+
+      <div class="gift-card">
+        <img src="images/hero-right.jpeg" alt="">
+        <button>E-Gift Cards</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="future-section">
+  <div class="future-container">
+    <div class="future-image">
+      <img src="images/diamonds.jpeg" alt="Lab grown diamonds">
+    </div>
+    <div class="future-content">
+      <h2>
+        Not Just A Trend. It’s<br>
+        <span>The <em>Future</em>.</span>
+      </h2>
+      <p>
+        Our lab-grown gold and silver jewellery is crafted with the same
+        brilliance and purity as mined metals without the compromise.
+      </p>
+      <div class="future-features">
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>925 Sterling Silver</span>
+        </div>
+
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>Certified Diamonds</span>
+        </div>
+
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>Ethical Sourcing</span>
+        </div>
+
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>Free 15 Days<br>Return & Exchange</span>
+        </div>
+
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>Customisable Designs</span>
+        </div>
+
+        <div class="feature">
+          <img src="images/925.jpeg" alt="">
+          <span>BIS Hallmark</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <h2>
+    Voices of Our <em>Happy Customer</em>
+  </h2>
+  <p class="reviews-subtitle">
+    Every piece we create carries a story but nothing shines brighter than the
+    words of those who wear them.
+  </p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <img src="images/review1.jpeg" alt="">
+      <div class="stars">★★★★★</div>
+      <h4>“So pretty!”</h4>
+      <p>
+        I recently ordered the 'Golden Radiance Hoops' from Kilangi, and I'm
+        absolutely in love! The craftsmanship is stunning, and the shine is
+        just perfect.
+      </p>
+      <span class="author">~ Harshad Mehta</span>
+    </div>
+
+    <div class="review-card">
+      <img src="images/review2.jpeg" alt="">
+      <div class="stars">★★★★★</div>
+      <h4>“So pretty!”</h4>
+      <p>
+        I recently ordered the 'Golden Radiance Hoops' from Kilangi, and I'm
+        absolutely in love! The craftsmanship is stunning, and the shine is
+        just perfect.
+      </p>
+      <span class="author">~ Harshad Mehta</span>
+    </div>
+
+    <div class="review-card">
+      <img src="images/review1.jpeg" alt="">
+      <div class="stars">★★★★★</div>
+      <h4>“So pretty!”</h4>
+      <p>
+        I recently ordered the 'Golden Radiance Hoops' from Kilangi, and I'm
+        absolutely in love! The craftsmanship is stunning, and the shine is
+        just perfect.
+      </p>
+      <span class="author">~ Harshad Mehta</span>
+    </div>
+
+    <div class="review-card">
+      <img src="images/review2.jpeg" alt="">
+      <div class="stars">★★★★★</div>
+      <h4>“So pretty!”</h4>
+      <p>
+        I recently ordered the 'Golden Radiance Hoops' from Kilangi, and I'm
+        absolutely in love! The craftsmanship is stunning, and the shine is
+        just perfect.
+      </p>
+      <span class="author">~ Harshad Mehta</span>
+    </div>
+  </div>
+  <button class="reviews-btn">
+    Read More Review →
+  </button>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>KILANGI</h4>
+      <p>Premium silver and gold jewellery with timeless elegance and fine craftsmanship.</p>
+    </div>
+    <div>
+      <h4>Our Collection</h4>
+      <a>Rings</a><a>Earrings</a><a>Pendants</a><a>Bracelets</a>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a>About</a><a>Contact</a><a>Gifting</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a>Privacy Policy</a><a>Refund Policy</a><a>Shipping Policy</a>
+    </div>
+  </div>
+  <div class="copyright">© 2025 / Kilangi</div>
+</footer>
+</body>
+</html>
